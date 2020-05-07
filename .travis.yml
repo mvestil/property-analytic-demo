@@ -19,11 +19,11 @@ env:
 
 before_script:
   - cp .env.travis .env
-  - composer install
-  - php artisan key:generate
   - mysql -u root -e 'CREATE DATABASE archistar;'
   - travis_retry composer self-update
   - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-source --dev
+  - composer install
+  - php artisan key:generate
   - php artisan migrate
 
 script:
