@@ -1,0 +1,33 @@
+dist: xenial
+
+language: php
+
+php:
+  - 7.3
+
+services:
+  - mysql
+
+cache:
+  directories:
+    - vendor
+
+env:
+  matrix:
+    - COMPOSER_FLAGS="--prefer-lowest"
+    - COMPOSER_FLAGS=""
+
+before_script:
+  - cp .env.travis .env
+  - php artisan key:generate
+  - mysql -u root -e 'CREATE DATABASE archistar;'
+  - travis_retry composer self-update
+  - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-source --dev
+  - php artisan migrate
+
+script:
+  - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
+  - php vendor/bin/phpcs --standard=psr2 app/
+
+after_script:
+  - php vendor/bin/ocular code-coverage:upload --format=php-clover coverage.clover
