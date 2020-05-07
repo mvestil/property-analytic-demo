@@ -5,7 +5,7 @@ A property-analytic simple project demo :)
 
 #### Installation
 1. Clone this repository
-2. Run `./setup.sh` in the root directory (builds Laradock containers with PHP7.3, Mysql, Nginx, etc.)
+2. Run `./setup.sh` in the root directory (builds Laravel v7.9.2 and Laradock containers with PHP7.3, Mysql, Nginx, etc.)
 3. Grab a coffee
 4. Visit http://localhost:90/
 
