@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 
 /**
  * Class AnalyticService
+ *
+ * Handles application logic for analytics related
  */
 class AnalyticService implements AnalyticServiceInterface
 {
@@ -50,7 +52,7 @@ class AnalyticService implements AnalyticServiceInterface
      * @param Property $property
      * @throws InvalidValueException|ValidationException
      */
-    public function save(Request $request, Property $property)
+    public function saveToProperty(Request $request, Property $property)
     {
         if (!$analyticType = $this->type->findById($request->input('analytic_type_id'))) {
             throw new ValidationException('Analytic type could not be found');

@@ -29,5 +29,5 @@ interface AnalyticServiceInterface
      * @param Property $property
      * @return mixed
      */
-    public function save(Request $request, Property $property);
+    public function saveToProperty(Request $request, Property $property);
 }

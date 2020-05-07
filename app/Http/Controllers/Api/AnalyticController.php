@@ -9,6 +9,11 @@ use App\Http\Resources\AnalyticCollection;
 use App\Models\Property;
 use App\Services\Contracts\AnalyticServiceInterface;
 
+/**
+ * Class AnalyticController
+ *
+ * Controller for analytic related
+ */
 class AnalyticController extends Controller
 {
     /**
@@ -48,6 +53,6 @@ class AnalyticController extends Controller
      */
     public function save(SaveAnalytic $request, Property $property)
     {
-        $this->analytic->save($request, $property);
+        $this->analytic->saveToProperty($request, $property);
     }
 }

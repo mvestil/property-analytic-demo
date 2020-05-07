@@ -10,6 +10,8 @@ use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
 /**
  * Class AnalyticTypeRepository
+ *
+ * Handles data interaction for AnalyticType model and it's relationships
  */
 class AnalyticTypeRepository extends BaseRepository implements AnalyticTypeRepositoryInterface
 {
@@ -24,6 +26,8 @@ class AnalyticTypeRepository extends BaseRepository implements AnalyticTypeRepos
     }
 
     /**
+     * Find type by id
+     *
      * @param int $id
      * @return AnalyticType|null
      */

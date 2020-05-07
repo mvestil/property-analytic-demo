@@ -45,7 +45,7 @@ class AnalyticServiceTest extends TestCase
         $this->expectException(ValidationException::class);
 
         $service = new AnalyticService($repo);
-       $service->save($request, $property);
+       $service->saveToProperty($request, $property);
     }
 
     public function test_save_analytic_to_property_expecting_numeric_value()
@@ -60,7 +60,7 @@ class AnalyticServiceTest extends TestCase
         $this->expectException(InvalidValueException::class);
 
         $service = new AnalyticService($repo);
-        $service->save($request, $property);
+        $service->saveToProperty($request, $property);
     }
 
     public function test_save_analytic_to_property_expecting_non_numeric_value()
@@ -75,7 +75,7 @@ class AnalyticServiceTest extends TestCase
         $this->expectException(InvalidValueException::class);
 
         $service = new AnalyticService($repo);
-        $service->save($request, $property);
+        $service->saveToProperty($request, $property);
     }
 
     public function test_adds_analytic_value_to_property()
@@ -97,6 +97,6 @@ class AnalyticServiceTest extends TestCase
             ->andReturn(null);
 
         $service = new AnalyticService($repo);
-        $this->assertNull($service->save($request, $property));
+        $this->assertNull($service->saveToProperty($request, $property));
     }
 }

@@ -12,6 +12,8 @@ use Ramsey\Uuid\Uuid;
 
 /**
  * Class PropertyRepository
+ *
+ * Handles data interaction for Property model and it's relationships
  */
 class PropertyRepository extends BaseRepository implements PropertyRepositoryInterface
 {
