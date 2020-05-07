@@ -24,8 +24,9 @@ class AnalyticResource extends JsonResource
             'analytic_type_name' => $this->name,
             'num_decimal_places' => $this->num_decimal_places,
             'units'              => $this->units,
-            'value'              => $this->is_numeric ? ((float) number_format($value, $this->num_decimal_places)) : $value,
-            'original_value'     => $this->is_numeric ? ((float) $value): $value,
+            'value'              => $this->is_numeric ?
+                ((float)number_format($value, $this->num_decimal_places)) : $value,
+            'original_value'     => $this->is_numeric ? ((float)$value) : $value,
             'is_numeric'         => (bool)$this->is_numeric,
         ];
     }
