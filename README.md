@@ -1,3 +1,5 @@
+A property-analytic simple project demo :)
+
 #### Requirements
 - Docker (I used v2.2.*, but should work for future versions)
 
