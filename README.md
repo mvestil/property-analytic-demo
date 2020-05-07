@@ -28,5 +28,7 @@ Includes
 
 Run the test by executing `./runtest.sh`
 
+#### Travis
+Latest Build : https://travis-ci.org/github/mvestil/property-analytic-demo/builds/684124091
 
 
