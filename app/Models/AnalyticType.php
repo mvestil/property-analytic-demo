@@ -14,6 +14,9 @@ class AnalyticType extends Model
      */
     protected $fillable = ['name', 'units', 'is_numeric', 'num_decimal_places'];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function properties()
     {
         return $this->belongsToMany(Property::class, 'property_analytics')
@@ -21,6 +24,11 @@ class AnalyticType extends Model
             ->withTimestamps();
     }
 
+    /**
+     * Check if type is numeric
+     *
+     * @return bool
+     */
     public function isNumeric(): bool
     {
         return (bool) $this->is_numeric;
