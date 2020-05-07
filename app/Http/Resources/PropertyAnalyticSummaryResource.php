@@ -35,11 +35,11 @@ class PropertyAnalyticSummaryResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'min_value'                  => $this->summary->getMin(),
-            'max_value'                  => $this->summary->getMax(),
-            'percentage_with_a_value'    => $this->summary->getPercentageWithAValue(),
-            'percentage_without_a_value' => $this->summary->getPercentageWithoutAValue(),
-            'median'                     => $this->summary->getMedian()
+            'min_value'                  => (float) $this->summary->getMin(),
+            'max_value'                  => (float) $this->summary->getMax(),
+            'percentage_with_a_value'    => (float) $this->summary->getPercentageWithAValue(),
+            'percentage_without_a_value' => (float) $this->summary->getPercentageWithoutAValue(),
+            'median'                     => (float) $this->summary->getMedian()
         ];
     }
 }
